@@ -19,17 +19,15 @@ public class Thread1 extends Thread {
         try {
             System.out.println(name + " - STATE 1");
             l.lock();
-                System.out.println("Firul " + name + " a luat un jeton.");
-                System.out.println(name + " - STATE 2");
-
-                for (int i = 0; i < k * 1000000; i++) {
-                    i++;
-                    i--;
-                }
-                System.out.println("Firul " + name + " a eliberat un jeton.");
-                l.unlock();
-                Thread.sleep(this.intarziere);
-
+            System.out.println("Firul " + name + " a luat un jeton.");
+            System.out.println(name + " - STATE 2");
+            for (int i = 0; i < k * 1000000; i++) {
+                i++;
+                i--;
+            }
+            System.out.println("Firul " + name + " a eliberat un jeton.");
+            l.unlock();
+            Thread.sleep(this.intarziere);
             System.out.println(name + " - STATE 3");
         } catch (InterruptedException e) {
             e.printStackTrace();
